@@ -11,9 +11,9 @@
   <div class="navbar-inner">
     <ul class="nav">
       <li><%= link_to "SupaTravel", root_path, class: "brand" %></li>
-      <li><%= link_to "Your Posts", user_posts_path(current_user) if user_signed_in? %></li>
-      <li><%= link_to "Register", new_user_registration_path %></li>
       <li><%= user_signed_in? ? (link_to "Sign Out", destroy_user_session_path, :method => :delete) : (link_to "Sign In", new_user_session_path ) %></li>
+      <li><%= link_to "Register", new_user_registration_path if user_signed_in? %></li>
+      <li><%= link_to "Your Posts", user_posts_path(current_user) if user_signed_in? %></li>
     </ul>
   </div>
 </div>
