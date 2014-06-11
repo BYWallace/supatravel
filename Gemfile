@@ -42,3 +42,4 @@ gem 'gmaps4rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'devise'
