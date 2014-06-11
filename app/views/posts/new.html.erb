@@ -1,1 +1,17 @@
 <h1>Post New</h1>
+
+<%= form_for [current_user, @post] do |f| %>
+
+  <div><%= f.label :title %><br />
+    <%= f.text_area :title %>
+  </div>
+  <div><%= f.label :location %><br />
+    <%= f.text_area :location %>
+  </div>
+  <div><%= f.label :story %><br />
+    <%= f.text_area :story %>
+  </div>
+
+
+  <%= f.submit 'Add To Your Collection', class: 'action' %>
+<% end %>
