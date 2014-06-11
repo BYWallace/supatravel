@@ -8,8 +8,18 @@ body{
 
 .nav {
   display: inline;
+  width: 20%;
 
   li {
     display: inline;
   }
+}
+
+a:link {
+  color: #FFA8E1;
+  text-decoration: none;
+}
+
+a:visited{
+  color: #FF24B2;
 }
