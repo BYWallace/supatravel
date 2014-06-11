@@ -43,3 +43,9 @@ gem 'gmaps4rails'
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+
+gem 'pry-rails'
+
+gem 'httparty'
+
+gem "paperclip", "~> 4.1"
