@@ -2,6 +2,10 @@
 
 <%= form_for [current_user, @post] do |f| %>
 
+  <% @post.errors.full_messages.each do |msg| %>
+    <%= "<p>#{msg}</p>".html_safe %>
+  <% end %>
+
   <div><%= f.label :title %><br />
     <%= f.text_area :title %>
   </div>
@@ -13,5 +17,5 @@
   </div>
 
 
-  <%= f.submit 'Add To Your Collection', class: 'action' %>
+  <%= f.submit 'Add Post', class: 'action' %>
 <% end %>
