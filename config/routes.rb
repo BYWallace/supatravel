@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :blogs, only: [:show] do
+  resources :users, only: [:show] do
     resources :posts
   end
 
