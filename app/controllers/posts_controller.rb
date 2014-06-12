@@ -24,6 +24,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @photos = Photo.where(user: current_user)
   end
 
   def create
