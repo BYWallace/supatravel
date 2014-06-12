@@ -1,18 +1,21 @@
-<h1>Post Show</h1>
+<h1><%= @post.title %></h1>
+<p>by: <%= @post.user.email %></p>
+
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 
-<div class="posts">
-<div class="post">
-
-  <h2><%= @post.title %></h2>
-  <h3><%= @post.location %></h3>
-  <p><%= @post.user.email %></p>
+  <h2><%= @post.location %></h2>
   <p><%= @post.story %></p>
   <p><%= @post.created_at %></p>
-
   <hr>
 
+ <% if signed_in? && current_user.id == @post.user_id %>
+      <a href="/users/<%= @post.user_id %>/posts/<%= @post.id %>/edit"><button class="input">Edit</button></a>
+      <%= form_for [@user, @post], method: 'delete' do |f| %>
+        <%= f.submit 'Delete Post', id: 'destroy' %>
+      <% end %>
+
+  <% end %>
 
 <script> buildGMap(<%=raw @hash.to_json %>); </script>

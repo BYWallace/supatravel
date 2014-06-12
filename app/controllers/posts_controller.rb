@@ -1,17 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_user
 
-  def index
-
-   @posts = Post.all
-    @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
-      @post = post
-      marker.lat post.latitude
-      marker.lng post.longitude
-      marker.infowindow render_to_string(partial: "/layouts/info_window", locals: {post: post})
-    end
-  end
-
   def show
     @current_post = Post.find(params[:id])
     @hash = Gmaps4rails.build_markers(@current_post) do |post, marker|
@@ -52,6 +41,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = @user.posts.find(params[:id])
+    @post.destroy
+    redirect_to user_path(@user)
+  end
 
   private
 
