@@ -1,1 +1,25 @@
+<!-- This page AND posts/new can be made into a common partial for dryness later-- -->
 <h1>Post Edit</h1>
+
+<%= form_for [current_user, @post] do |f| %>
+
+  <% @post.errors.full_messages.each do |msg| %>
+    <%= "<p>#{msg}</p>".html_safe %>
+  <% end %>
+
+  <div><%= f.label :title %><br />
+    <%= f.text_area :title %>
+  </div>
+  <div><%= f.label :location %><br />
+    <%= f.text_area :location %>
+  </div>
+  <div><%= f.label :story %><br />
+    <%= f.text_area :story %>
+  </div>
+
+  <div>
+  <%= collection_check_boxes(:post, :photo_ids, Photo.where(user: current_user), :id, :url) %>
+  </div>
+
+  <%= f.submit 'Save Changes', class: 'action' %>
+<% end %>

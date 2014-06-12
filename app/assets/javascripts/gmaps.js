@@ -1,4 +1,11 @@
 function buildGMap(mapData){
+
+
+
+
+
+
+
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
     markers = handler.addMarkers(mapData);
@@ -20,3 +27,17 @@ function buildGMap(mapData){
     handler.fitMapToBounds();
   });
 }
+
+
+
+
+[
+  {
+    "featureType": "landscape",
+    "stylers": [
+      { "color": "#7f5080" },
+      { "invert_lightness": true },
+      { "visibility": "on" }
+    ]
+  }
+]
