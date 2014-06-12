@@ -24,6 +24,7 @@ var mapStyle = [
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false,
         styles:    mapStyle
 
   }, internal: {id: 'map'}}, function(){
