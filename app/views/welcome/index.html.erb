@@ -11,6 +11,11 @@
   <p><%= post.user_id %></p>
   <p><%= post.story %></p>
   <p><%= post.created_at %></p>
+  <% if signed_in? && current_user.id == post.user_id %>
+      <a href="/users/<%= post.user_id %>/posts/<%= post.id %>/edit"><button class="input">Edit</button></a>
+      <a href="/users/<%= post.user_id %>/posts/<%= post.id %>/delete"><button class="input">Delete</button></a>
+
+  <% end %>
   <hr>
 <% end %>
 
