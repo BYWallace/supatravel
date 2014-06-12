@@ -28,6 +28,15 @@
         </label>
       </li>
   <% end %>
+  <br>
+  <%= f.submit "submit", id: "submit" %>
 <% end %>
 </ul>
+
 </div>
+
+<script>
+  $("img").on("click", function() {
+    $(this).toggleClass("selected");
+  });
+</script>
