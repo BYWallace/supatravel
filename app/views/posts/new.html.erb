@@ -18,11 +18,15 @@
         <%= f.text_area :story %>
       </div>
 
-      <div>
-      <%= collection_check_boxes(:post, :photo_ids, @photos, :id, :photo_image_file_name) %>
-      </div>
-
-      <%= f.submit 'Add Post', class: 'action' %>
-    <% end %>
-  </div>
+  <div class="photo-checkboxes">
+  <ul>
+  <% @photos.each do |photo| %>
+      <li>
+        <label>
+        <%= check_box_tag 'post[photo_ids][]', photo.id %>
+        <%= image_tag photo.photo_image.url(:thumb) %>
+        </label>
+      </li>
+  <% end %>
+</ul>
 </div>
