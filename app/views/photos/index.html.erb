@@ -3,7 +3,7 @@
 <ul>
   <% @photos.each do |photo| %>
     <li>
-      <%= image_tag photo.photo_image.url(:medium) %>
+      <a href='/users/<%= photo.user.id.to_s %>/photos/<%= photo.id.to_s %>'><%= image_tag photo.photo_image.url(:medium) %></a>
     </li>
   <% end %>
 </ul>

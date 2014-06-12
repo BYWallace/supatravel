@@ -1,3 +1,7 @@
 <h1>Your Photo</h1>
 
 <%= image_tag @photo.photo_image.url(:medium) %>
+
+<%= form_for [@user, @photo], method: 'delete' do |f| %>
+  <%= f.submit "Delete Photo", id: "destroy" %>
+<% end %>
