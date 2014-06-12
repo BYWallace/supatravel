@@ -16,6 +16,9 @@
     <%= f.text_area :story %>
   </div>
 
+  <div>
+  <%= collection_check_boxes(:post, :photo_ids, Photo.where(user: current_user), :id, :url) %>
+  </div>
 
   <%= f.submit 'Add Post', class: 'action' %>
 <% end %>

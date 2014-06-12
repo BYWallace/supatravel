@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
-  has_many :photos, through: :post
+  has_many :photos, dependent: :destroy
   validates_associated :posts
 
   validates :email, :encrypted_password, presence: true
