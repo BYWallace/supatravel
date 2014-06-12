@@ -5,7 +5,10 @@
 <div class="supatravel">
   <h1>SupaTravel</h1>
 </div>
-
+ <%= render "common/call_to_action" %>
+<div style='width: 800px;'>
+  <div id="map" style='width: 100%; height: 400px;'></div>
+</div>
 <div class="map">
 <script> buildGMap(<%=raw @hash.to_json %>); </script>
 </div>
