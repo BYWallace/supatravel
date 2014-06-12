@@ -3,8 +3,8 @@
 </div>
 
 <div class="inner">
-  <h1>Your Profile Page</h1>
-  <p><%= @user.email %></p>
+  <h1>Post Show</h1>
+
 
   <div class="posts">
   <div class="post">
@@ -17,10 +17,10 @@
     <p><%= post.created_at %></p>
 
     <% if signed_in? && current_user.id == post.user_id %>
-      <a href="/users/<%= post.user_id %>/posts/<%= post.id %>/edit"><button class="input">Edit</button></a>
-      <%= form_for [@user, @post], method: 'delete' do |f| %>
-        <%= f.submit 'Delete Post', id: 'destroy' %>
-      <% end %>
+        <a href="/users/<%= post.user_id %>/posts/<%= post.id %>/edit"><button class="input">Edit</button></a>
+        <a href="/users/<%= post.user_id %>/posts/<%= post.id %>/delete"><button class="input">Delete</button></a>
+
+    <% end %>
 
     <hr>
   <% end %>

@@ -1,7 +1,9 @@
-<h1>Your Photo</h1>
+<div class="inner">
+  <h1>Your Photo</h1>
 
-<%= image_tag @photo.photo_image.url(:medium) %>
+  <%= image_tag @photo.photo_image.url(:medium) %>
 
-<%= form_for [@user, @photo], method: 'delete' do |f| %>
-  <%= f.submit "Delete Photo", id: "destroy" %>
-<% end %>
+  <%= form_for [@user, @photo], method: 'delete' do |f| %>
+    <%= f.submit "Delete Photo", id: "destroy" %>
+  <% end %>
+</div>

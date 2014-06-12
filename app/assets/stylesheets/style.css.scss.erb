@@ -8,16 +8,29 @@ body{
   overflow: auto;
 }
 
+h2, h3, h4 {
+  margin: 0;
+}
+
   .main {
     border-radius: 15px;
     box-shadow: 4px 4px 20px rgba(0,0,0,.35);
+    height: 100%;
     margin: 0 auto;
     padding: 0;
     width: 100%;
 
-    .supatravel{
+    .inner {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      width: 60%;
+    }
+
+    .supatravel h1 {
       font-family: 'Damion', cursive;
       font-size: 40px;
+      margin: 0;
     }
   }
 
@@ -29,7 +42,8 @@ body{
 
 .nav {
   display: block;
-  font-family: 'Arial';
+  font-family: 'Helvetica';
+  font-weight: 300;
   margin: 0 auto;
   overflow: auto;
   width: 80%;
@@ -99,5 +113,9 @@ div#call_to_action {
   margin-right: 20%;
   style: bold;
   text-align: center;
+
+}
+
+.inner-action {
 
 }

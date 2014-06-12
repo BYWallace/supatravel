@@ -1,9 +1,11 @@
-<h1><%= @user.email %>'s Photos</h1>
+<div class="inner">
+  <h1><%= @user.email %>'s Photos</h1>
 
-<ul>
-  <% @photos.each do |photo| %>
-    <li>
-      <a href='/users/<%= photo.user.id.to_s %>/photos/<%= photo.id.to_s %>'><%= image_tag photo.photo_image.url(:medium) %></a>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @photos.each do |photo| %>
+      <li>
+        <a href='/users/<%= photo.user.id.to_s %>/photos/<%= photo.id.to_s %>'><%= image_tag photo.photo_image.url(:medium) %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>

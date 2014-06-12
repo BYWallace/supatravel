@@ -1,8 +1,12 @@
-<%= form_for [@user, @photo] do |form| %>
-  <p>
-    <%= form.label :photo_image %>
-    <%= form.file_field :photo_image %>
-  </p>
+<div class="inner">
 
-  <%= form.submit "Submit", id: "submit" %>
-<% end %>
+  <%= form_for [@user, @photo] do |form| %>
+    <p>
+      <%= form.label :photo_image %>
+      <%= form.file_field :photo_image %>
+    </p>
+
+    <%= form.submit "Submit", id: "submit" %>
+  <% end %>
+
+</div>
