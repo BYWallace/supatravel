@@ -20,7 +20,7 @@
     </div>
 
     <div>
-    <%= collection_check_boxes(:post, :photo_ids, Photo.where(user: current_user), :id, :url) %>
+    <%= collection_check_boxes(:post, :photo_ids, @photos, :id, :url) %>
     </div>
 
     <%= f.submit 'Save Changes', class: 'action' %>

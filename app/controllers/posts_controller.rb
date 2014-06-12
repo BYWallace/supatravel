@@ -30,6 +30,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @photos = Photo.where(user: current_user)
   end
 
   def update
