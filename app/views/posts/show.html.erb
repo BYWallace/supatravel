@@ -4,7 +4,9 @@
 <div class="inner">
   <h1><%= @post.title %></h1>
   <p>by: <%= @post.user.email %></p>
-
+    <% @post.photos.each do |f| %>
+      <%= image_tag f.photo_image.url(:medium) %>
+    <% end %>
     <h2><%= @post.location %></h2>
     <p><%= @post.story %></p>
     <p><%= @post.created_at %></p>
