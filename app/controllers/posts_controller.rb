@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :find_user
 
   def index
+
    @posts = Post.all
     @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
       @post = post
