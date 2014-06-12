@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   before_save :get_coordinates
   belongs_to :user
   has_and_belongs_to_many :photos
+
   # validates_associated :photos
 
   # validates :latitude, numericality: {greater_than_or_equal_to: -90, less_than_or_equal_to: 90}
