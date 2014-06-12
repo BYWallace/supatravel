@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   before_action(:load_user, only: [:index, :new, :create, :show, :edit, :update, :destroy] )
-  before_action :require_current_user, except: [:index, :show, :search]
+  # before_action :require_current_user, except: [:index, :show, :search]
   before_action(:load_photo, { only: [:edit, :update, :show, :destroy] })
 
   def index
@@ -8,10 +8,23 @@ class PhotosController < ApplicationController
     @photos = page_user.photos.reverse
   end
 
+  def show
+    if params[:user_id]
+      @page_user = User.find_by(id: params[:user_id])
+      @photo = Photo.find(params[:id])
+    end
+  end
+
   def new
+    @photo = Photo.new
   end
 
   def create
+    @photo = Photo.new(photo_params)
+    @photo.user = @user
+    @photo.save
+
+    redirect_to user_photo_path(@user, @photo)
   end
 
 
