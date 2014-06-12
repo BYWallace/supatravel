@@ -2,7 +2,7 @@
 body{
   background: url('swiss_alps.jpg') top left no-repeat;
   background-attachment: fixed;
-  color: #F28ABE;
+  color: rgba(0,0, 80, 1);
   font-family: 'EB Garamond', serif;
   margin: 0;
 
@@ -12,6 +12,11 @@ body{
     margin: 0 auto;
     padding: 40px;
     width: 900px;
+
+    h1{
+      font-family: 'Permanent Marker', cursive;
+      font-size: 70px;
+    }
   }
 
 }

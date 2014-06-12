@@ -1,2 +1,7 @@
-<h1><%= @user.name %>'s page</h1>
+<h1><%= @user.email %>'s page</h1>
 
+<% @user.posts.each do |f| %>
+  <h2><%= f.title %></h2>
+  <imgsrc ="<%= f.photo %>"/>
+  <p><%= f.story %></p>
+<% end %>
