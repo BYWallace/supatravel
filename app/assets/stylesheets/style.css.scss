@@ -13,28 +13,61 @@ body{
     padding: 40px;
     width: 900px;
 
-    h1{
-      font-family: 'Permanent Marker', cursive;
-      font-size: 70px;
+    .supatravel{
+      font-family: 'Damion', cursive;
+      font-size: 40px;
     }
   }
 
 }
 
 .nav {
-  display: inline;
-  width: 20%;
+  display: block;
+  font-family: 'Arial';
+  margin: 0 auto;
+  overflow: auto;
+  width: 80%;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
 
   li {
-    display: inline;
+    background: rgba(205, 255, 117, 0.8);
+    display: inline-block;
+    float: right;
+    margin: 0 10px;
+    padding: 10px 20px;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+  }
+
+  li:hover {
+    background: rgba(205, 255, 117, 1);
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+  }
+
+  li:first-child {
+    float: left;
+    font-family: 'Damion', cursive;
+    font-size: 40px;
+    margin: 0;
+    padding: 10px 60px;
+    text-align: left;
   }
 }
 
 a:link {
-  color: #FFA8E1;
+  color: rgba(0,0,0,1);
   text-decoration: none;
 }
 
 a:visited{
-  color: #FF24B2;
+  color: rgba(0,0,200,1);
 }
