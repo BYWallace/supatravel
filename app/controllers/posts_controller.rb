@@ -5,6 +5,13 @@ class PostsController < ApplicationController
   end
 
   def show
+    @posts = @user.posts.all
+    @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
+        @post = post
+        marker.lat post.latitude
+        marker.lng post.longitude
+        marker.infowindow render_to_string(partial: "/layouts/info_window", locals: {post: post})
+      end
   end
 
   def new

@@ -7,12 +7,7 @@ class WelcomeController < ApplicationController
         @post = post
         marker.lat post.latitude
         marker.lng post.longitude
-        marker.infowindow render_to_string(:partial => "/welcome/info_window", :locals => { :object => post}).gsub(/\n/, '')
-        marker.picture({
-                    :url => "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-                    :width   => 36,
-                    :height  => 36
-        })
+        marker.infowindow render_to_string(partial: "/layouts/info_window", locals: {post: post})
       end
     end
 
