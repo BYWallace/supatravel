@@ -1,13 +1,32 @@
 function buildGMap(mapData){
 
-
-
+var mapStyle = [
+  {
+    "featureType": "landscape",
+    "stylers": [
+      { "invert_lightness": true },
+      { "visibility": "on" },
+      { "color": "#e3b180" }
+    ]
+  },{
+    "featureType": "water",
+    "stylers": [
+      { "weight": 2 },
+      { "color": "#7c80ab" }
+    ]
+  },{
+  }
+];
 
 
 
 
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  handler.buildMap({ provider: {
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles:    mapStyle
+
+  }, internal: {id: 'map'}}, function(){
     markers = handler.addMarkers(mapData);
     //       THIS IS THE ORIGINAL TEST PIN, centered at GA, DC.
     //   [
@@ -30,14 +49,3 @@ function buildGMap(mapData){
 
 
 
-
-[
-  {
-    "featureType": "landscape",
-    "stylers": [
-      { "color": "#7f5080" },
-      { "invert_lightness": true },
-      { "visibility": "on" }
-    ]
-  }
-]

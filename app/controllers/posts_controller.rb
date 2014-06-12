@@ -39,11 +39,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to user_post_path(current_user, @post)
     else
