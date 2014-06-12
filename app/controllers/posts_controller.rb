@@ -14,6 +14,9 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+
+      @post.photos.create()
+
       redirect_to user_post_path(current_user, @post)
     else
       render :new
@@ -34,4 +37,9 @@ class PostsController < ApplicationController
       )
     end
 
+    def photo_params
+      params.require(:post).permit(
+        :title,
+      )
+    end
 end
