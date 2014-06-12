@@ -49,3 +49,5 @@ gem 'pry-rails'
 gem 'httparty'
 
 gem 'paperclip', '~> 4.1'
+
+gem 'aws-sdk'
