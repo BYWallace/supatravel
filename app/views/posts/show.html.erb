@@ -4,14 +4,12 @@
 </div>
 
 <div class="posts">
-<div class="post"
-<% @posts.each do |post| %>
-  <h2><%= post.title %></h2>
-  <h3><%= post.location %></h3>
-  <p><%= post.user_id %></p>
-  <p><%= post.story %></p>
-  <p><%= post.created_at %></p>
+<div class="post">
+  <h2><%= @post.title %></h2>
+  <h3><%= @post.location %></h3>
+  <p><%= @post.user.email %></p>
+  <p><%= @post.story %></p>
+  <p><%= @post.created_at %></p>
   <hr>
-<% end %>
 
 <script> buildGMap(<%=raw @hash.to_json %>); </script>

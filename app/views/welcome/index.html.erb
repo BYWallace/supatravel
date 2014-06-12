@@ -8,7 +8,7 @@
 <% @posts.each do |post| %>
   <h2><%= post.title %></h2>
   <h3><%= post.location %></h3>
-  <p><%= post.user_id %></p>
+  <p><%= post.user.email %></p>
   <p><%= post.story %></p>
   <p><%= post.created_at %></p>
   <% if signed_in? && current_user.id == post.user_id %>

@@ -2,11 +2,18 @@ class PostsController < ApplicationController
   before_action :find_blog
 
   def index
+   @posts = Post.all
+    @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
+      @post = post
+      marker.lat post.latitude
+      marker.lng post.longitude
+      marker.infowindow render_to_string(partial: "/layouts/info_window", locals: {post: post})
+    end
   end
 
   def show
-    @posts = @user.posts.all
-    @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
+    @current_post = Post.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@current_post) do |post, marker|
         @post = post
         marker.lat post.latitude
         marker.lng post.longitude
