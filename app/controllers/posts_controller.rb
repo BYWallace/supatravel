@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_blog
+  before_action :find_user
 
   def index
    @posts = Post.all
@@ -26,20 +26,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
-    if @post.save
+    #binding.pry
+    @post = current_user.posts.create(post_params)
+    redirect_to user_post_path(current_user, @post)
 
-      @post.photos.create()
-
-      redirect_to user_post_path(current_user, @post)
-    else
-      render :new
-    end
+      # if @post.save
+      #   redirect_to user_post_path(current_user, @post)
+      # else
+      #   render :new
+      # end
   end
 
   private
 
-    def find_blog
+    def find_user
       @user = User.find(params[:user_id])
     end
 
@@ -47,13 +47,9 @@ class PostsController < ApplicationController
       params.require(:post).permit(
         :title,
         :story,
-        :location
+        :location,
+        :photo_ids => []
       )
     end
 
-    def photo_params
-      params.require(:post).permit(
-        :title,
-      )
-    end
 end

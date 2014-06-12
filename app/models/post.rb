@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   before_save :get_coordinates
   belongs_to :user
+  has_and_belongs_to_many :photos
 
   # validates_associated :photos
 
