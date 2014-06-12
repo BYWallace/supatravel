@@ -1,20 +1,22 @@
 <div>
   <div id="map"></div>
 </div>
-<h1><%= @post.title %></h1>
-<p>by: <%= @post.user.email %></p>
+<div class="inner">
+  <h1><%= @post.title %></h1>
+  <p>by: <%= @post.user.email %></p>
 
-  <h2><%= @post.location %></h2>
-  <p><%= @post.story %></p>
-  <p><%= @post.created_at %></p>
-  <hr>
+    <h2><%= @post.location %></h2>
+    <p><%= @post.story %></p>
+    <p><%= @post.created_at %></p>
+    <hr>
 
- <% if signed_in? && current_user.id == @post.user_id %>
-      <a href="/users/<%= @post.user_id %>/posts/<%= @post.id %>/edit"><button class="input">Edit</button></a>
-      <%= form_for [@user, @post], method: 'delete' do |f| %>
-        <%= f.submit 'Delete Post', id: 'destroy' %>
-      <% end %>
+   <% if signed_in? && current_user.id == @post.user_id %>
+        <a href="/users/<%= @post.user_id %>/posts/<%= @post.id %>/edit"><button class="input">Edit</button></a>
+        <%= form_for [@user, @post], method: 'delete' do |f| %>
+          <%= f.submit 'Delete Post', id: 'destroy' %>
+        <% end %>
 
-  <% end %>
+    <% end %>
 
-<script> buildGMap(<%=raw @hash.to_json %>); </script>
+  <script> buildGMap(<%=raw @hash.to_json %>); </script>
+</div>

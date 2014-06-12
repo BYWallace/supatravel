@@ -1,26 +1,28 @@
 <div class="inner">
-  <h1>Post New</h1>
+  <div class="inner-action">
+    <h1>Post New</h1>
 
-  <%= form_for [current_user, @post] do |f| %>
+    <%= form_for [current_user, @post] do |f| %>
 
-    <% @post.errors.full_messages.each do |msg| %>
-      <%= "<p>#{msg}</p>".html_safe %>
+      <% @post.errors.full_messages.each do |msg| %>
+        <%= "<p>#{msg}</p>".html_safe %>
+      <% end %>
+
+      <div><%= f.label :title %><br />
+        <%= f.text_area :title %>
+      </div>
+      <div><%= f.label :location %><br />
+        <%= f.text_area :location %>
+      </div>
+      <div><%= f.label :story %><br />
+        <%= f.text_area :story %>
+      </div>
+
+      <div>
+      <%= collection_check_boxes(:post, :photo_ids, @photos, :id, :photo_image_file_name) %>
+      </div>
+
+      <%= f.submit 'Add Post', class: 'action' %>
     <% end %>
-
-    <div><%= f.label :title %><br />
-      <%= f.text_area :title %>
-    </div>
-    <div><%= f.label :location %><br />
-      <%= f.text_area :location %>
-    </div>
-    <div><%= f.label :story %><br />
-      <%= f.text_area :story %>
-    </div>
-
-    <div>
-    <%= collection_check_boxes(:post, :photo_ids, @photos, :id, :photo_image_file_name) %>
-    </div>
-
-    <%= f.submit 'Add Post', class: 'action' %>
-  <% end %>
+  </div>
 </div>

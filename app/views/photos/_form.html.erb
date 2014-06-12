@@ -1,6 +1,4 @@
-<div class="inner">
-
-  <%= form_for [@user, @photo] do |form| %>
+<%= form_for [@user, @photo] do |form| %>
     <p>
       <%= form.label :photo_image %>
       <%= form.file_field :photo_image %>
@@ -8,5 +6,3 @@
 
     <%= form.submit "Submit", id: "submit" %>
   <% end %>
-
-</div>
