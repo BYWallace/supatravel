@@ -11,7 +11,7 @@
 * Amazon Web Services
 * jQuery + JavaScript
 
-##User Stories
+##User Stories:
 * a user can login, signup, logout
 * a user can create a new post with text and images
 * a user can see other users' posts
